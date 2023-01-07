@@ -61,4 +61,5 @@ require("vitesse").setup {
 
 ## Thanks
 
-This colorscheme is forked from [srvana/neosolarized.nvim](https://github.com/svrana/neosolarized.nvim), for more details you may need to check.
+- [antfu/vscode-theme-vitesse](https://github.com/antfu/vscode-theme-vitesse)
+- [srvana/neosolarized.nvim](https://github.com/svrana/neosolarized.nvim) modified, for more details you may need to check.
