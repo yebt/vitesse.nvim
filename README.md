@@ -1,6 +1,6 @@
-<h1 align="center">Vitesse colorscheme for NeoVIM</h1>
+<h1 align="center">Vitesse theme for NeoVIM</h1>
 
-![](https://cdn.jsdelivr.net/gh/2nthony/statics@main/uPic/0sM65PKGbSg6.png)
+![](https://cdn.jsdelivr.net/gh/2nthony/statics@main/uPic/5LS1HW5NjR0q.png)
 
 <p align="center">
   <sub>
@@ -40,6 +40,16 @@ Setup:
 ```lua
 require("vitesse").setup {
   comment_italics = true,
+}
+```
+
+lualine:
+
+```lua
+require("lualine").setup {
+  options = {
+    theme = "vitesse",
+  }
 }
 ```
 
