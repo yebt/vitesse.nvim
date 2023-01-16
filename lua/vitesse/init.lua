@@ -6,8 +6,6 @@ local fn = vim.fn
 
 local defaults = {
   comment_italics = true,
-  background_set = false,
-  background_color = require("colorbuddy.init").Color.none,
   float_background = false,
 }
 
@@ -131,15 +129,9 @@ function M.setup(opts)
   Group.new("Information", colors.blue)
   Group.new("Hint", colors.cyan)
 
-  if opts["background_set"] and opts["background_color"] == Color.none then
-    opts["background_color"] = colors.background
-  end
-
-  local bg_color = opts["background_color"]
-
   -- normal non-current text
-  Group.new("Normal", colors.baseForeground, bg_color)
-  Group.new("NormalNC", colors.secondaryForeground, bg_color)
+  Group.new("Normal", colors.baseForeground, colors.background)
+  Group.new("NormalNC", colors.secondaryForeground, colors.background)
   if opts.float_background == false then
     Group.new("NormalFloat", colors.none)
   end
@@ -226,7 +218,7 @@ function M.setup(opts)
   Group.new("TabLineSel", colors.yellow, colors.bg)
   Group.new("TabLineSeparatorSel", colors.cyan, colors.none)
 
-  Group.new("LineNr", colors.ignored:light():light(), bg_color, styles.NONE)
+  Group.new("LineNr", colors.ignored:light():light(), colors.background, styles.NONE)
   Group.new("CursorLine", colors.none, colors.lowActiveBackground, styles.NONE)
   Group.new("CursorLineNr", colors.activeForeground, colors.none, styles.NONE)
   Group.new("Cursor", colors.black3, colors.secondaryForeground, styles.NONE)
