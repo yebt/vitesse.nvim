@@ -8,6 +8,7 @@ local defaults = {
   comment_italics = true,
   background_set = false,
   background_color = require("colorbuddy.init").Color.none,
+  float_background = false,
 }
 
 local M = {
@@ -139,6 +140,9 @@ function M.setup(opts)
   -- normal non-current text
   Group.new("Normal", colors.baseForeground, bg_color)
   Group.new("NormalNC", colors.secondaryForeground, bg_color)
+  if opts.float_background == false then
+    Group.new("NormalFloat", colors.none)
+  end
 
   Group.new("Identifier", colors.class)
 
