@@ -35,11 +35,12 @@ use {
 }
 ```
 
-Setup:
+Setup with defaults:
 
 ```lua
 require("vitesse").setup {
   comment_italics = true,
+  float_background = false,
 }
 ```
 
