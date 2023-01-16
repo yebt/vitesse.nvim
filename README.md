@@ -41,6 +41,7 @@ Setup with defaults:
 require("vitesse").setup {
   comment_italics = true,
   float_background = false,
+  reverse_visual = false,
 }
 ```
 

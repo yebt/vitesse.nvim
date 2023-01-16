@@ -7,6 +7,7 @@ local fn = vim.fn
 local defaults = {
   comment_italics = true,
   float_background = false,
+  reverse_visual = false,
 }
 
 local M = {
@@ -168,7 +169,7 @@ function M.setup(opts)
   Group.new("NonText", colors.black3, colors.none, styles.bold)
   Group.new("StatusLine", colors.lowBackground, colors.black1, styles.reverse)
   Group.new("StatusLineNC", colors.lowActiveBackground, colors.black1, styles.reverse)
-  Group.new("Visual", colors.none, colors.black3)
+  Group.new("Visual", colors.none, colors.black3, opts.reverse_visual and styles.reverse or styles.none)
   Group.new("Directory", colors.blue)
   Group.new("ErrorMsg", colors.red, colors.none, styles.reverse)
 
