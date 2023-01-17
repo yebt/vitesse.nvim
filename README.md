@@ -17,10 +17,10 @@
 
 ## Limitations
 
+- Requires neovim 0.8.0+
 - Vitesse dark only
 - Not 100% same as [vscode-theme-vitesse](https://github.com/antfu/vscode-theme-vitesse)
-- Tested on neovim v0.8
-- Change your terminal background to `#121212` (vitesse dark background).
+- Use [vitesse.iterm](https://github.com/2nthony/vitesse.iterm) or change your terminal background to `#121212` (vitesse dark background)
 
 ## Usage
 
@@ -30,6 +30,17 @@ Packer:
 use {
   "2nthony/vitesse.nvim",
   requires = {
+    "tjdevries/colorbuddy.nvim"
+  }
+}
+```
+
+Lazy.nvim:
+
+```lua
+require("lazy").setup {
+  "2nthony/vitesse.nvim",
+  dependencies = {
     "tjdevries/colorbuddy.nvim"
   }
 }
