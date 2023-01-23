@@ -56,22 +56,11 @@ require("vitesse").setup {
 }
 ```
 
-lualine:
+## Plugin support
 
-```lua
-require("lualine").setup {
-  options = {
-    theme = "vitesse",
-  }
-}
-```
-
-## Plugins supported
-
-> Copy from origin repo
-
+- lualine
 - nvim-cmp
-- lsp-saga
+- lspsaga
 - telescope
 - vim-gitgutter
 - neomake
