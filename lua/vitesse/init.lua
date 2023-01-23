@@ -147,7 +147,6 @@ function M.setup(opts)
   Group.new("Underlined", colors.red)
   Group.new("Strikethrough", colors.activeBackground, colors.none, styles.strikethrough)
   Group.new("Ignore", colors.activeBackground)
-  Group.new("Error", colors.red)
   Group.new("Todo", colors.magenta, colors.none, styles.bold)
 
   Group.link("Include", groups.PreProc)
@@ -289,6 +288,8 @@ function M.setup(opts)
   Group.new("LspReferenceRead", colors.none, colors.none, styles.underline)
   Group.link("LspReferenceText", groups.LspReferenceRead)
   Group.new("LspReferenceWrite", colors.none, colors.none, styles.underline)
+  Group.new("LspFloatWinBorder", colors.primary)
+  Group.new("LspLinesDiagBorder", colors.primary)
 
   -- plugins
 
