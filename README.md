@@ -64,8 +64,6 @@ require("vitesse").setup {
 - telescope
 - vim-gitgutter
 - neomake
-- seblj/nvim-tabline
-- kevinwhang91/nvim-bqf
 - Primeagen/harpoon
 - lewis6991/gitsigns.nvim
 - phaazon/hop.nvim
