@@ -24,6 +24,17 @@
 
 ## Usage
 
+Lazy.nvim:
+
+```lua
+require("lazy").setup {
+  "2nthony/vitesse.nvim",
+  dependencies = {
+    "tjdevries/colorbuddy.nvim"
+  }
+}
+```
+
 Packer:
 
 ```lua
@@ -35,13 +46,12 @@ use {
 }
 ```
 
-Lazy.nvim:
+Lualine:
 
 ```lua
-require("lazy").setup {
-  "2nthony/vitesse.nvim",
-  dependencies = {
-    "tjdevries/colorbuddy.nvim"
+require("lualine").setup {
+  options = {
+    theme = "vitesse",
   }
 }
 ```
