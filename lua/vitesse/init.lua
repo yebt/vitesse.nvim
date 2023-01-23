@@ -229,19 +229,6 @@ function M.setup(opts)
 
   Group.new("MatchParen", colors.red, colors.activeBackground, styles.bold)
 
-  Group.new("GitGutterAdd", colors.green)
-  Group.new("GitGutterChange", colors.yellow)
-  Group.new("GitGutterDelete", colors.red)
-  Group.new("GitGutterChangeDelete", colors.red)
-
-  Group.new("GitSignsAddLn", colors.green)
-  Group.new("GitSignsAddNr", colors.green)
-  Group.new("GitSignsChangeLn", colors.yellow)
-  Group.new("GitSignsChangeNr", colors.yellow)
-  Group.new("GitSignsDeleteLn", colors.red)
-  Group.new("GitSignsDeleteNr", colors.red)
-  Group.link("GitSignsCurrentLineBlame", groups.Comment)
-
   -- vim highlighting
   Group.link("vimVar", groups.Identifier)
   Group.link("vimFunc", groups.Identifier)
@@ -288,114 +275,6 @@ function M.setup(opts)
   Group.link("diffAdded", groups.Statement)
   Group.link("diffLine", groups.Identifier)
 
-  Group.new("NeomakeErrorSign", colors.orange)
-  Group.new("NeomakeWarningSign", colors.yellow)
-  Group.new("NeomakeMessageSign", colors.cyan)
-  Group.new("NeomakeNeomakeInfoSign", colors.green)
-
-  Group.new("CmpItemKind", colors.green)
-  Group.new("CmpItemMenu", groups.NormalNC)
-  -- Group.new('CmpItemAbbr', colors.secondaryForeground, colors.none, styles.none)
-  -- Group.new('CmpItemAbbrMatch', colors.secondaryForeground, colors.none, styles.none)
-  Group.new('CmpItemAbbrMatch', colors.blue, colors.none, styles.none)
-  Group.new("CmpItemAbbrDeprecated", colors.secondaryForeground, colors.none, styles.strikethrough)
-  Group.new("CmpItemKindText", colors.white, colors.none, styles.none)
-  Group.new("CmpItemKindMethod", colors.green, colors.none, styles.none)
-  Group.new("CmpItemKindFunction", colors.blue, colors.none, styles.none)
-  Group.new("CmpItemKindConstructor", colors.orange, colors.none, styles.none)
-  Group.new("CmpItemKindField", colors.yellow, colors.none, styles.none)
-  Group.new("CmpItemKindVariable", colors.orange, colors.none, styles.none)
-  Group.new("CmpitemKindClass", colors.yellow, colors.none, styles.none)
-  Group.new("CmpItemKindInterface", colors.yellow, colors.none, styles.none)
-  Group.new("CmpItemKindModule", colors.green, colors.none, styles.none)
-  Group.new("CmpItemKindProperty", colors.green, colors.none, styles.none)
-  Group.new("CmpItemKindUnit", colors.orange, colors.none, styles.none)
-  Group.new("CmpItemKindValue", colors.cyan, colors.none, styles.none)
-  Group.new("CmpItemKindEnum", colors.yellow, colors.none, styles.none)
-  Group.new("CmpItemKindKeyword", colors.green, colors.none, styles.none)
-  Group.new("CmpItemKindSnippet", colors.magenta, colors.none, styles.none)
-  Group.new("CmpItemKindColor", colors.magenta, colors.none, styles.none)
-  Group.new("CmpItemKindFile", colors.purple6, colors.none, styles.none)
-  Group.new("CmpItemKindReference", colors.purple6, colors.none, styles.none)
-  Group.new("CmpItemKindFolder", colors.purple6, colors.none, styles.none)
-  Group.new("CmpItemKindEnumMember", colors.cyan, colors.none, styles.none)
-  Group.new("CmpItemKindConstant", colors.cyan, colors.none, styles.none)
-  Group.new("CmpItemKindStruct", colors.yellow, colors.none, styles.none)
-  Group.new("CmpItemKindEvent", colors.orange, colors.none, styles.none)
-  Group.new("CmpItemKindOperator", colors.cyan, colors.none, styles.none)
-  Group.new("CmpItemKindTypeParameter", colors.orange, colors.none, styles.none)
-
-  Group.new("LspSagaCodeActionTitle", colors.green)
-  Group.new("LspSagaBorderTitle", colors.yellow, colors.none, styles.bold)
-  Group.new("LspSagaDiagnosticHeader", colors.yellow)
-  Group.new("ProviderTruncateLine", colors.black1)
-  Group.new("LspSagaShTruncateLine", groups.ProviderTruncateLine)
-  Group.new("LspSagaDocTruncateLine", groups.ProviderTruncateLine)
-  Group.new("LspSagaCodeActionTruncateLine", groups.ProviderTruncateLine)
-  Group.new("LspSagaHoverBorder", groups.FloatBorder)
-  Group.new("LspSagaRenameBorder", groups.LspSagaHoverBorder)
-  Group.new("LSPSagaDiagnosticBorder", groups.LspSagaHoverBorder)
-  Group.new("LspSagaSignatureHelpBorder", groups.LspSagaHoverBorder)
-  Group.new("LspSagaCodeActionBorder", groups.LspSagaHoverBorder)
-  Group.new("LspSagaLspFinderBorder", groups.LspSagaHoverBorder)
-  Group.new("LspSagaFloatWinBorder", groups.LspSagaHoverBorder)
-  Group.new("LspSagaSignatureHelpBorder", groups.LspSagaHoverBorder)
-  Group.new("LspSagaDefPreviewBorder", groups.LspSagaHoverBorder)
-  Group.new("LspSagaAutoPreviewBorder", groups.LspSagaHoverBorder)
-  Group.new("LspFloatWinBorder", groups.LspSagaHoverBorder)
-  Group.new("LspLinesDiagBorder", groups.LspSagaHoverBorder)
-  Group.new("LspSagaFinderSelection", colors.green, colors.none, styles.bold)
-  --Group.new('SagaShadow', colors.black1)
-
-  Group.new("TelescopeMatching", colors.orange, groups.Special, groups.Special, groups.Special)
-  Group.new("TelescopeBorder", groups.FloatBorder) -- float border not quite dark enough, maybe that needs to change?
-  Group.new("TelescopePromptBorder", groups.FloatBorder) -- active border lighter for clarity
-  Group.new("TelescopeTitle", groups.Normal) -- separate them from the border a little, but not make them pop
-  Group.new("TelescopePromptPrefix", groups.Normal) -- default is groups.Identifier
-  Group.link("TelescopeSelection", groups.CursorLine)
-  Group.new("TelescopeSelectionCaret", colors.cyan)
-
-  Group.new("NeogitDiffAddHighlight", colors.blue, colors.red)
-  Group.new("NeogitDiffDeleteHighlight", colors.blue, colors.red)
-  Group.new("NeogitHunkHeader", groups.Normal, colors.black1)
-  Group.new("NeogitHunkHeaderHighlight", groups.Normal, colors.red)
-  Group.new("NeogitDiffContextHighlight", colors.baseForeground, colors.black1)
-  Group.new("NeogitCommandText", groups.Normal)
-  Group.new("NeogitCommandTimeText", groups.Normal)
-  Group.new("NeogitCommandCodeNormal", groups.Normal)
-  Group.new("NeogitCommandCodeError", groups.Error)
-  Group.new("NeogitNotificationError", groups.Error, colors.none)
-  Group.new("NeogitNotificationInfo", groups.Information, colors.none)
-  Group.new("NeogitNotificationWarning", groups.Warning, colors.none)
-
-  -- seblj/nvim-tabline
-  Group.new("TabLineSeparatorActive", colors.cyan)
-  Group.link("TabLineModifiedSeparatorActive", groups.TablineSeparatorActive)
-
-  -- kevinhwang91/nvim-bqf
-  Group.new("BqfPreviewBorder", colors.activeBackground)
-  Group.new("BqfSign", colors.cyan)
-
-  -- Primeagen/harpoon
-  Group.new("HarpoonBorder", colors.cyan)
-  Group.new("HarpoonWindow", groups.Normal)
-
-  -- nvim-tree/nvim-tree.lua
-  Group.new("NvimTreeFolderIcon", colors.blue)
-  Group.new("NvimTreeRootFolder", colors.orange)
-  Group.new("NvimTreeImageFile", colors.orange)
-  Group.new("NvimTreeSpecialFile", colors.orange, colors.none, styles.bold + styles.underline)
-
-  -- phaazon/hop.nvim
-  Group.link("HopNextKey", groups.IncSearch)
-  Group.link("HopNextKey1", groups.IncSearch)
-  Group.link("HopNextKey2", groups.IncSearch)
-
-  -- https://github.com/j-hui/fidget.nvim (for some reason the background
-  -- is only correct if used with background_set = true) even when set below)
-  Group.new("FidgetTitle", colors.magenta)
-  Group.new("FidgetTask", colors.secondaryForeground)
-
   Group.link("DiagnosticError", groups.Error)
   Group.new("DiagnosticWarn", colors.yellow)
   Group.new("DiagnosticInfo", colors.cyan)
@@ -411,9 +290,32 @@ function M.setup(opts)
   Group.link("LspReferenceText", groups.LspReferenceRead)
   Group.new("LspReferenceWrite", colors.none, colors.none, styles.underline)
 
+  -- plugins
+
+  -- neomake
+  require("vitesse.plugins.neomake")
+  -- gitgutter
+  require("vitesse.plugins.gitgutter")
+  -- gitsigns
+  require("vitesse.plugins.gitsigns")
+  -- cmp
+  require("vitesse.plugins.cmp")
+  -- lspsaga
+  require("vitesse.plugins.lspsaga")
+  -- telescope
+  require("vitesse.plugins.telescope")
+  -- neogit
+  require("vitesse.plugins.neogit")
+  -- Primeagen/harpoon
+  require("vitesse.plugins.harpoon")
+  -- nvim-tree/nvim-tree.lua
+  require("vitesse.plugins.nvim-tree")
+  -- phaazon/hop.nvim
+  require("vitesse.plugins.hop")
+  -- j-hui/fidget
+  require("vitesse.plugins.fidget")
   -- folke/which-key.nvim
-  Group.new("WhichKeySeparator", colors.activeBackground, colors.black1, styles.bold)
-  Group.new("WhichKeyDesc", colors.cyan, colors.black1)
+  require("vitesse.plugins.which-key")
 
   -- group names with an ampersand throw an error until they gain support in 0.8.0
   if fn.has("nvim-0.8.0") then
