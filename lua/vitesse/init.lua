@@ -186,11 +186,6 @@ function M.setup(opts)
   Group.new("Folded", colors.secondaryForeground, colors.black1, styles.bold, colors.black3)
   Group.new("FoldColumn", colors.secondaryForeground, colors.black1)
 
-  Group.new("DiffAdd", colors.green, colors.black1, styles.bold, colors.green)
-  Group.new("DiffChange", colors.yellow, colors.black1, styles.bold, colors.yellow)
-  Group.new("DiffDelete", colors.red, colors.black1, styles.bold)
-  Group.new("DiffText", colors.blue, colors.black1, styles.bold, colors.blue)
-
   Group.new("SignColumn", colors.secondaryForeground, colors.none, styles.NONE)
   Group.new("Conceal", colors.blue, colors.none, styles.NONE)
 
@@ -297,6 +292,8 @@ function M.setup(opts)
   require("vitesse.plugins.neomake")
   -- gitgutter
   require("vitesse.plugins.gitgutter")
+  -- sindrets/diffview.nvim
+  require("vitesse.plugins.diffview")
   -- gitsigns
   require("vitesse.plugins.gitsigns")
   -- cmp

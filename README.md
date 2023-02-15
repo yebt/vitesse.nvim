@@ -75,6 +75,7 @@ require("vitesse").setup {
 - vim-gitgutter
 - neomake
 - Primeagen/harpoon
+- sindrets/diffview
 - lewis6991/gitsigns.nvim
 - phaazon/hop.nvim
 - j-hui/fidget
