@@ -79,6 +79,7 @@ require("vitesse").setup {
 - lewis6991/gitsigns.nvim
 - phaazon/hop.nvim
 - j-hui/fidget
+- folke/noice.nvim
 
 ## Thanks
 
