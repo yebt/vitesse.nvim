@@ -134,7 +134,7 @@ function M.setup(opts)
 
   -- any statement, conditional, repeat (for, do while), label, operator
   Group.new("Statement", colors.green)
-  Group.new("PreProc", colors.red) -- was orange
+  Group.new("PreProc", colors.red)      -- was orange
   Group.new("Special", colors.property) -- was red
   Group.new("SpecialKey", colors.property)
   Group.new("Underlined", colors.red)
@@ -193,7 +193,7 @@ function M.setup(opts)
   --Group.new("SpellRare", colors.cyan, colors.bg, styles.undercurl)
 
   -- pum (popup menu)
-  Group.new("Pmenu", groups.Normal, colors.black1, styles.none) -- popup menu normal item
+  Group.new("Pmenu", groups.Normal, colors.black1, styles.none)                         -- popup menu normal item
   Group.new("PmenuSel", colors.activeBackground, colors.baseForeground, styles.reverse) -- selected item
   Group.new("PmenuSbar", colors.black1, colors.none, styles.reverse)
   Group.new("PmenuThumb", colors.black2, colors.none, styles.reverse)
