@@ -123,9 +123,9 @@ function M.setup(opts)
   Group.new("Information", colors.blue)
   Group.new("Hint", colors.cyan)
 
-  -- normal non-current text
-  Group.new("Normal", colors.baseForeground, colors.background)
-  Group.new("NormalNC", colors.secondaryForeground, colors.background)
+  Group.new("Normal", colors.baseForeground)
+  -- normal non-current text, means non-focus window text
+  Group.new("NormalNC", colors.baseForeground)
   if opts.float_background == false then
     Group.new("NormalFloat", colors.none)
   end
