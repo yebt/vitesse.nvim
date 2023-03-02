@@ -20,14 +20,14 @@ M.themes = {
   activeForeground = "#bebaab",
   secondaryForeground = "#83827d",
   ignored = "#383837",
-  border = "#191919",
+  border = "#f0f0f0",
 
   background = "#121212",
   activeBackground = "#181818",
 
   lowBackground = "#222222",
   lowActiveBackground = "#292929",
-  lowBorder = "#252525",
+  lowBorder = "#E7E5DB",
 
   comment = "#5c6b5e",
   string = "#c98a7d",

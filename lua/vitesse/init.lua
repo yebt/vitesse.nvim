@@ -199,7 +199,7 @@ function M.setup(opts)
   Group.new("PmenuThumb", colors.black2, colors.none, styles.reverse)
 
   -- be nice for this float border to be cyan if active
-  Group.new("FloatBorder", colors.primary)
+  Group.new("FloatBorder", colors.lowBorder)
 
   Group.new("TabLine", colors.secondaryForeground, colors.black1, styles.NONE, colors.secondaryForeground)
   Group.new("TabLineFill", colors.secondaryForeground, colors.black1)
