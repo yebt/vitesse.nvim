@@ -1,10 +1,9 @@
 local colors = require("colorbuddy.init").colors
 local Group = require("colorbuddy.init").Group
-local groups = require("colorbuddy.init").groups
 local styles = require("colorbuddy.init").styles
 
 Group.new("CmpItemKind", colors.green)
-Group.new("CmpItemMenu", groups.NormalNC)
+Group.new("CmpItemMenu", colors.secondaryForeground)
 -- Group.new('CmpItemAbbr', colors.secondaryForeground, colors.none, styles.none)
 -- Group.new('CmpItemAbbrMatch', colors.secondaryForeground, colors.none, styles.none)
 Group.new('CmpItemAbbrMatch', colors.blue, colors.none, styles.none)
