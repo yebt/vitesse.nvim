@@ -311,7 +311,7 @@ function M.setup(opts)
   -- folke/which-key.nvim
   require("vitesse.plugins.which-key")
   -- folke/noice.nvim
-  require("vitesse.plugins.noice")
+  require("vitesse.plugins.noice").setup(opts)
 
   -- group names with an ampersand throw an error until they gain support in 0.8.0
   if fn.has("nvim-0.8.0") then
