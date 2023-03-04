@@ -6,7 +6,7 @@ local fn = vim.fn
 
 local defaults = {
   comment_italics = true,
-  float_background = false,
+  transparent_background = true,
   reverse_visual = false,
 }
 
@@ -123,12 +123,15 @@ function M.setup(opts)
   Group.new("Information", colors.blue)
   Group.new("Hint", colors.cyan)
 
-  Group.new("Normal", colors.baseForeground)
-  -- normal non-current text, means non-focus window text
-  Group.new("NormalNC", colors.baseForeground)
-  if opts.float_background == false then
-    Group.new("NormalFloat", colors.none)
+  local background_color = colors.bg
+  local float_background_color = colors.lowBackground
+  if opts.transparent_background then
+    background_color = colors.none
+    float_background_color = colors.none
   end
+  Group.new("Normal", colors.baseForeground, background_color)
+  -- normal non-current text, means non-focus window text
+  Group.new("NormalNC", groups.Normal, float_background_color)
 
   Group.new("Identifier", colors.class)
 
