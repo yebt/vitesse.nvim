@@ -62,7 +62,7 @@ Setup with defaults:
 ```lua
 require("vitesse").setup {
   comment_italics = true,
-  float_background = false,
+  transparnet_background = true,
   reverse_visual = false,
 }
 ```
