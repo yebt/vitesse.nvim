@@ -132,7 +132,7 @@ function M.setup(opts)
   Group.new("Normal", colors.baseForeground, background_color)
   -- normal non-current text, means non-focus window text
   Group.new("NormalNC", groups.Normal, float_background_color)
-  Group.new('NormalFloat', float_background_color)
+  Group.new('NormalFloat', groups.Normal, float_background_color)
 
   Group.new("Identifier", colors.class)
 
