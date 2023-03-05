@@ -67,6 +67,13 @@ require("vitesse").setup {
 }
 ```
 
+Recommended vim options for transparent:
+
+```lua
+vim.opt.winblend = 0
+vim.opt.pumblend = 0
+```
+
 ## Plugin support
 
 - lualine
