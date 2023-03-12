@@ -8,6 +8,7 @@ local defaults = {
   comment_italics = true,
   transparent_background = true,
   reverse_visual = false,
+  dim_nc = false,
 }
 
 local M = {
@@ -131,7 +132,11 @@ function M.setup(opts)
   end
   Group.new("Normal", colors.baseForeground, background_color)
   -- normal non-current text, means non-focus window text
-  Group.new("NormalNC", groups.Normal, float_background_color)
+  local normal_nc_fg = groups.Normal
+  if opts.dim_nc then
+    normal_nc_fg = colors.secondaryForeground
+  end
+  Group.new("NormalNC", normal_nc_fg, float_background_color)
   Group.new('NormalFloat', groups.Normal, float_background_color)
 
   Group.new("Identifier", colors.class)
