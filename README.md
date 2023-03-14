@@ -64,6 +64,7 @@ require("vitesse").setup {
   comment_italics = true,
   transparnet_background = true,
   reverse_visual = false,
+  dim_nc = false,
 }
 ```
 
