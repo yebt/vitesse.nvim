@@ -122,8 +122,8 @@ function M.setup(opts)
   Color.new("magenta", vitesse_themes.magenta)
 
   Group.new("Error", colors.red)
-  Group.new("Warning", colors.yellow)
-  Group.new("Information", colors.blue)
+  Group.new("Warn", colors.yellow)
+  Group.new("Info", colors.blue)
   Group.new("Hint", colors.cyan)
 
   local normal_fg = colors.baseForeground
@@ -205,7 +205,7 @@ function M.setup(opts)
   Group.new("VertSplit", colors.black3, colors.none, styles.NONE)
   Group.new("Title", colors.orange, colors.none, styles.bold)
   Group.new("VisualNOS", colors.none, colors.black1, styles.reverse)
-  Group.new("WarningMsg", colors.orange, colors.none, styles.bold)
+  Group.new("WarningMsg", groups.Warn)
   Group.new("WildMenu", colors.baseForeground, colors.black1, styles.reverse)
   Group.new("Folded", colors.secondaryForeground, colors.black1, styles.bold, colors.black3)
   Group.new("FoldColumn", colors.secondaryForeground, colors.black1)
@@ -276,7 +276,7 @@ function M.setup(opts)
   Group.link("diffAdded", groups.Statement)
   Group.link("diffLine", groups.Identifier)
 
-  Group.link("DiagnosticError", groups.Error)
+  Group.new("DiagnosticError", groups.Error)
   Group.new("DiagnosticWarn", colors.yellow)
   Group.new("DiagnosticInfo", colors.cyan)
   Group.new("DiagnosticHint", colors.green)
@@ -285,7 +285,7 @@ function M.setup(opts)
   Group.new("DiagnosticUnderlineInfo", colors.none, colors.none, styles.underline)
   Group.new("DiagnosticUnderlineHint", colors.none, colors.none, styles.underline)
   Group.link("DiagnosticVirtualTextHint", groups.Comment)
-  Group.link("DiagnosticTextWarn", groups.WarningMsg)
+  Group.link("DiagnosticTextWarn", groups.Warn)
 
   Group.new("LspReferenceRead", colors.none, colors.none, styles.underline)
   Group.link("LspReferenceText", groups.LspReferenceRead)
@@ -420,7 +420,7 @@ function M.setup(opts)
 
   Group.link("@text.todo", groups.Todo)
   Group.link("@text.note", groups.Comment)
-  Group.link("@text.warning", groups.WarningMsg)
+  Group.link("@text.warning", groups.Warn)
   Group.new("@text.danger", colors.red, colors.none, styles.bold)
 
   function M.translate(group)
@@ -442,8 +442,9 @@ function M.setup(opts)
 
   local lspColors = {
     Error = groups.Error,
-    Warning = groups.Warning,
-    Information = groups.Information,
+    Warn = groups.Warn,
+    Warning = groups.Warn,
+    Information = groups.Info,
     Hint = groups.Hint,
   }
   for _, lsp in pairs({ "Error", "Warning", "Information", "Hint" }) do
