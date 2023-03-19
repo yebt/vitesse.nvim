@@ -137,13 +137,13 @@ function M.setup(opts)
     normal_nc_fg = colors.secondaryForeground
   end
   Group.new("NormalNC", normal_nc_fg, float_background_color)
-  Group.new('NormalFloat', groups.Normal, float_background_color)
+  Group.new("NormalFloat", groups.Normal, float_background_color)
 
   Group.new("Identifier", colors.class)
 
   -- any statement, conditional, repeat (for, do while), label, operator
   Group.new("Statement", colors.green)
-  Group.new("PreProc", colors.red)      -- was orange
+  Group.new("PreProc", colors.red) -- was orange
   Group.new("Special", colors.property) -- was red
   Group.new("SpecialKey", colors.property)
   Group.new("Underlined", colors.red)
@@ -202,7 +202,7 @@ function M.setup(opts)
   --Group.new("SpellRare", colors.cyan, colors.bg, styles.undercurl)
 
   -- pum (popup menu)
-  Group.new("Pmenu", groups.Normal, colors.black1, styles.none)                         -- popup menu normal item
+  Group.new("Pmenu", groups.Normal, colors.black1, styles.none) -- popup menu normal item
   Group.new("PmenuSel", colors.activeBackground, colors.baseForeground, styles.reverse) -- selected item
   Group.new("PmenuSbar", colors.black1, colors.none, styles.reverse)
   Group.new("PmenuThumb", colors.black2, colors.none, styles.reverse)
@@ -318,6 +318,10 @@ function M.setup(opts)
   require("vitesse.plugins.which-key")
   -- folke/noice.nvim
   require("vitesse.plugins.noice").setup(opts)
+  -- echasnovski/mini.indentscope
+  require("vitesse.plugins.mini-indentscope").setup()
+  -- neo-tree
+  require("vitesse.plugins.neo-tree").setup(opts)
 
   -- group names with an ampersand throw an error until they gain support in 0.8.0
   -- XML-like tags
@@ -437,13 +441,7 @@ function M.setup(opts)
   for _, lsp in pairs({ "Error", "Warning", "Information", "Hint" }) do
     local lspGroup = Group.new(M.translate("LspDiagnosticsDefault" .. lsp), lspColors[lsp])
     Group.link(M.translate("LspDiagnosticsVirtualText" .. lsp), lspGroup)
-    Group.new(
-      M.translate("LspDiagnosticsUnderline" .. lsp),
-      colors.none,
-      colors.none,
-      styles.undercurl,
-      lspColors[lsp]
-    )
+    Group.new(M.translate("LspDiagnosticsUnderline" .. lsp), colors.none, colors.none, styles.undercurl, lspColors[lsp])
   end
 
   for _, name in pairs({ "LspReferenceText", "LspReferenceRead", "LspReferenceWrite" }) do
