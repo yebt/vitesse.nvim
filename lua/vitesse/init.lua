@@ -7,6 +7,7 @@ local fn = vim.fn
 local defaults = {
   comment_italics = true,
   transparent_background = true,
+  transparent_float_background = true,
   reverse_visual = false,
   dim_nc = false,
 }
@@ -47,6 +48,8 @@ function M.setup(opts)
   local groups = M.groups
   local styles = M.styles
 
+  Color.new("bg", vitesse_colors.background)
+
   Color.new("black", vitesse_colors.black)
   Color.new("black1", vitesse_colors.black1)
   Color.new("black2", vitesse_colors.black2)
@@ -65,7 +68,7 @@ function M.setup(opts)
   Color.new("ignored", vitesse_themes.ignored)
   Color.new("border", vitesse_themes.border)
 
-  Color.new("background", vitesse_themes.background)
+  Color.new("baseBackground", vitesse_themes.background)
   Color.new("activeBackground", vitesse_themes.activeBackground)
 
   Color.new("lowBackground", vitesse_themes.lowBackground)
@@ -118,26 +121,45 @@ function M.setup(opts)
   Color.new("yellow", vitesse_themes.yellow)
   Color.new("magenta", vitesse_themes.magenta)
 
-  Color.new("bg", colors.background)
   Group.new("Error", colors.red)
   Group.new("Warning", colors.yellow)
   Group.new("Information", colors.blue)
   Group.new("Hint", colors.cyan)
 
-  local background_color = colors.bg
-  local float_background_color = colors.lowBackground
+  local normal_fg = colors.baseForeground
+  local normal_bg = colors.baseBackground
+  local normal_nc_fg = normal_fg
+  local normal_float_bg = colors.baseBackground:light()
+
   if opts.transparent_background then
-    background_color = colors.none
-    float_background_color = colors.none
+    normal_bg = colors.none
   end
-  Group.new("Normal", colors.baseForeground, background_color)
-  -- normal non-current text, means non-focus window text
-  local normal_nc_fg = groups.Normal
+  if opts.transparent_float_background then
+    normal_float_bg = colors.none
+  end
   if opts.dim_nc then
     normal_nc_fg = colors.secondaryForeground
   end
-  Group.new("NormalNC", normal_nc_fg, float_background_color)
-  Group.new("NormalFloat", groups.Normal, float_background_color)
+  Group.new("Normal", normal_fg, normal_bg)
+  -- normal non-current text, means non-focus window text
+  Group.new("NormalNC", normal_nc_fg, normal_bg)
+
+  -- pum (popup menu) float
+  Group.new("Pmenu", groups.Normal, normal_float_bg) -- popup menu normal item
+  Group.new("PmenuSel", colors.activeBackground, normal_fg, styles.reverse) -- selected item
+  Group.new("PmenuSbar", colors.black1, colors.none, styles.reverse)
+  Group.new("PmenuThumb", colors.black2, colors.none, styles.reverse)
+
+  -- be nice for this float border to be cyan if active
+  Group.new("FloatBorder", colors.lowBorder)
+
+  Group.new("LineNr", colors.ignored:light():light(), colors.none, styles.NONE)
+  Group.new("CursorLine", colors.none, colors.lowActiveBackground, styles.NONE)
+  Group.new("CursorLineNr", colors.activeForeground, colors.none, styles.NONE)
+  Group.new("Cursor", colors.black3, colors.secondaryForeground, styles.NONE)
+  Group.link("lCursor", groups.Cursor)
+  Group.link("TermCursor", groups.Cursor)
+  Group.new("TermCursorNC", colors.black3, colors.activeBackground)
 
   Group.new("Identifier", colors.class)
 
@@ -201,27 +223,10 @@ function M.setup(opts)
   --Group.new("SpellLocal", colors.yellow, colors.bg, styles.undercurl)
   --Group.new("SpellRare", colors.cyan, colors.bg, styles.undercurl)
 
-  -- pum (popup menu)
-  Group.new("Pmenu", groups.Normal, colors.black1, styles.none) -- popup menu normal item
-  Group.new("PmenuSel", colors.activeBackground, colors.baseForeground, styles.reverse) -- selected item
-  Group.new("PmenuSbar", colors.black1, colors.none, styles.reverse)
-  Group.new("PmenuThumb", colors.black2, colors.none, styles.reverse)
-
-  -- be nice for this float border to be cyan if active
-  Group.new("FloatBorder", colors.lowBorder)
-
   Group.new("TabLine", colors.secondaryForeground, colors.black1, styles.NONE, colors.secondaryForeground)
   Group.new("TabLineFill", colors.secondaryForeground, colors.black1)
   Group.new("TabLineSel", colors.yellow, colors.bg)
   Group.new("TabLineSeparatorSel", colors.cyan, colors.none)
-
-  Group.new("LineNr", colors.ignored:light():light(), colors.background, styles.NONE)
-  Group.new("CursorLine", colors.none, colors.lowActiveBackground, styles.NONE)
-  Group.new("CursorLineNr", colors.activeForeground, colors.none, styles.NONE)
-  Group.new("Cursor", colors.black3, colors.secondaryForeground, styles.NONE)
-  Group.link("lCursor", groups.Cursor)
-  Group.link("TermCursor", groups.Cursor)
-  Group.new("TermCursorNC", colors.black3, colors.activeBackground)
 
   Group.new("MatchParen", colors.red, colors.activeBackground, styles.bold)
 
