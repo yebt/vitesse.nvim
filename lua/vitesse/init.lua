@@ -287,6 +287,7 @@ function M.setup(opts)
   Group.new("LspReferenceWrite", colors.none, colors.none, styles.underline)
   Group.new("LspFloatWinBorder", colors.primary)
   Group.new("LspLinesDiagBorder", colors.primary)
+  Group.new("LspCodeLens", groups.Comment) -- lsp hint text, cmp
 
   -- plugins
 
