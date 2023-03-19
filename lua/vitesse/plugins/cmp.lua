@@ -25,6 +25,7 @@ Group.new("CmpItemKindFolder", colors.purple6, colors.none, styles.none)
 Group.new("CmpItemKindStruct", colors.yellow, colors.none, styles.none)
 Group.new("CmpItemKindEvent", colors.orange, colors.none, styles.none)
 Group.new("CmpItemKindCodeium", colors.codeium, colors.none, styles.none)
+Group.new("CmpItemKindDefault", colors.blue, colors.none, styles.none)
 
 link("CmpItemKindText", "@text")
 link("CmpItemKindMethod", "@method")
