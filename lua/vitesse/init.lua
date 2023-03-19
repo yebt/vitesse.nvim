@@ -328,6 +328,8 @@ function M.setup(opts)
   require("vitesse.plugins.mini-indentscope").setup()
   -- neo-tree
   require("vitesse.plugins.neo-tree").setup(opts)
+  -- alpha
+  require("vitesse.plugins.alpha")(opts)
 
   -- group names with an ampersand throw an error until they gain support in 0.8.0
   -- XML-like tags
