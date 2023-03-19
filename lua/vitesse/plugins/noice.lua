@@ -1,6 +1,4 @@
-local M = {}
-
-M.setup = function(opts)
+return function(opts)
   local colors = require("colorbuddy.init").colors
   local Group = require("colorbuddy.init").Group
   local groups = require("colorbuddy.init").groups
@@ -15,5 +13,3 @@ M.setup = function(opts)
   Group.new("NoicePopup", groups.Information)
   Group.new("NoiceMini", colors.baseForeground, opts.transparent_background and colors.none or colors.lowBackground)
 end
-
-return M
