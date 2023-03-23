@@ -10,8 +10,10 @@ return function(_)
   Group.new("NeoTreeNormalNC", groups.NormalNC)
   Group.new("NeoTreeDimText", colors.secondaryForeground)
 
+  Group.new("NeoTreeFileIcon", groups.NeoTreeNormal)
   Group.new("NeoTreeFileName", groups.NeoTreeNormal)
   Group.new("NeoTreeFileNameNC", groups.NeoTreeNormalNC)
+  Group.new("NeoTreeDirectoryIcon", groups.Folder)
   Group.new("NeoTreeDirectoryName", groups.NeoTreeFileName)
   Group.new("NeoTreeDirectoryNameNC", groups.NeoTreeFileNameNC)
 
