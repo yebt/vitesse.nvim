@@ -82,13 +82,8 @@ vim.opt.pumblend = 0
 - nvim-cmp
 - lspsaga
 - telescope
-- vim-gitgutter
-- neomake
-- Primeagen/harpoon
 - sindrets/diffview
 - lewis6991/gitsigns.nvim
-- phaazon/hop.nvim
-- j-hui/fidget
 - folke/noice.nvim
 
 ## Thanks
