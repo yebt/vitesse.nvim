@@ -294,6 +294,10 @@ function M.setup(opts)
   Group.new("LspLinesDiagBorder", colors.primary)
   Group.new("LspCodeLens", groups.Comment) -- lsp hint text, cmp
 
+  -- alias ui
+  Group.new("Folder", colors.orange)
+  Group.new("FolderRoot", colors.blue)
+
   -- plugins
 
   -- neomake
