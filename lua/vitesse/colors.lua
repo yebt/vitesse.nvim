@@ -9,6 +9,8 @@ M.colors = {
   white2 = "#d7d7d7",
   white1 = "#ebebeb",
   white = "#ffffff",
+
+  ivory2 = "#eee8d5",
   purple6 = "#5a32a3",
 }
 
