@@ -253,7 +253,7 @@ function M.setup(opts)
   Group.new("vimGroup", colors.blue, colors.NONE, styles.underline + styles.bold)
 
   Group.new("gitcommitSummary", colors.green)
-  Group.new("gitcommitComment", colors.activeBackground, colors.NONE, styles.italic)
+  Group.new("gitcommitComment", colors.comment, colors.NONE, styles.italic)
   Group.link("gitcommitUntracked", groups.gitcommitComment)
   Group.link("gitcommitDiscarded", groups.gitcommitComment)
   Group.new("gitcommitSelected", groups.gitcommitComment)
