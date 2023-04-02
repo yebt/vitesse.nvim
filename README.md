@@ -11,17 +11,31 @@
   </sub>
 </p>
 
+## More screenshots
+
+<details><summary>👉 Toggle here 👈</summary>
+
+![](https://cdn.jsdelivr.net/gh/2nthony/statics@main/uPic/mTzAiuZkQmGR.png)
+![](https://cdn.jsdelivr.net/gh/2nthony/statics@main/uPic/BquUsEgy1vzV.png)
+![](https://cdn.jsdelivr.net/gh/2nthony/statics@main/uPic/qsBrvgVlz5FF.png)
+![](https://cdn.jsdelivr.net/gh/2nthony/statics@main/uPic/FNMvsuIE7Nk3.png)
+![](https://cdn.jsdelivr.net/gh/2nthony/statics@main/uPic/YvWaUlskqZvp.png)
+![](https://cdn.jsdelivr.net/gh/2nthony/statics@main/uPic/Eg1IzFGiqJ4i.png)
+
+</details>
+
 ## Notice
 
 **This colorscheme may not perfect because I do not know Vim configurations, I only forked [srvana/neosolarized.nvim](https://github.com/svrana/neosolarized.nvim) and change the colors.**
 
 ## Limitations
 
-- Requires neovim 0.8.0+
+- Requires neovim 0.8.0+ , nvim-treesitter latest
 - Vitesse dark only
 - Transparent friendly
 - Not 100% same as [vscode-theme-vitesse](https://github.com/antfu/vscode-theme-vitesse)
 - Use [vitesse.iterm](https://github.com/2nthony/vitesse.iterm) or change your terminal background to `#121212` (vitesse dark background)
+- Lazy to update...
 
 ## Usage
 
