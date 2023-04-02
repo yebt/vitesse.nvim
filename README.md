@@ -85,6 +85,11 @@ vim.opt.pumblend = 0
 - sindrets/diffview
 - lewis6991/gitsigns.nvim
 - folke/noice.nvim
+- neo-tree.nvim
+- alpha-nvim
+- mini.indentscope
+- nvim-tree
+- folke/whichkey.nvim
 
 ## Thanks
 
