@@ -90,6 +90,30 @@ vim.opt.winblend = 0
 vim.opt.pumblend = 0
 ```
 
+## Extra features
+
+<details><summary>⛰️ Slant tab</summary>
+
+![](https://cdn.jsdelivr.net/gh/2nthony/statics@main/uPic/sUrBU2Hu7h7U.png)
+
+Usage:
+
+```lua
+local slant = require("vitesse.features.bufferline.slant")
+
+-- you can override or customize
+-- slant.highlights.buffer_selected.bold = false
+
+require("bufferline").setup {
+  options = {
+    separator_style = slant.separator_style,
+  },
+  highlights = slant.highlights,
+}
+```
+
+</details>
+
 ## Plugin support
 
 - lualine
