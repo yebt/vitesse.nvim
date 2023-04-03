@@ -298,43 +298,6 @@ function M.setup(opts)
   Group.new("Folder", colors.orange)
   Group.new("FolderRoot", colors.blue)
 
-  -- plugins
-
-  -- neomake
-  require("vitesse.plugins.neomake")
-  -- gitgutter
-  require("vitesse.plugins.gitgutter")
-  -- sindrets/diffview.nvim
-  require("vitesse.plugins.diffview")
-  -- gitsigns
-  require("vitesse.plugins.gitsigns")
-  -- cmp
-  require("vitesse.plugins.cmp")
-  -- lspsaga
-  require("vitesse.plugins.lspsaga")
-  -- telescope
-  require("vitesse.plugins.telescope")
-  -- neogit
-  require("vitesse.plugins.neogit")
-  -- Primeagen/harpoon
-  require("vitesse.plugins.harpoon")
-  -- nvim-tree/nvim-tree.lua
-  require("vitesse.plugins.nvim-tree")
-  -- phaazon/hop.nvim
-  require("vitesse.plugins.hop")
-  -- j-hui/fidget
-  require("vitesse.plugins.fidget")
-  -- folke/which-key.nvim
-  require("vitesse.plugins.which-key")
-  -- folke/noice.nvim
-  require("vitesse.plugins.noice")(opts)
-  -- neo-tree
-  require("vitesse.plugins.neo-tree")(opts)
-  -- alpha
-  require("vitesse.plugins.alpha")(opts)
-  -- echasnovski/mini.indentscope
-  require("vitesse.plugins.mini-indentscope")(opts)
-
   -- group names with an ampersand throw an error until they gain support in 0.8.0
   -- XML-like tags
   Group.new("@tag", colors.green)
@@ -426,6 +389,43 @@ function M.setup(opts)
   Group.link("@text.note", groups.Comment)
   Group.link("@text.warning", groups.Warn)
   Group.new("@text.danger", colors.red, colors.none, styles.bold)
+
+  -- plugins
+
+  -- neomake
+  require("vitesse.plugins.neomake")
+  -- gitgutter
+  require("vitesse.plugins.gitgutter")
+  -- sindrets/diffview.nvim
+  require("vitesse.plugins.diffview")
+  -- gitsigns
+  require("vitesse.plugins.gitsigns")
+  -- cmp
+  require("vitesse.plugins.cmp")
+  -- lspsaga
+  require("vitesse.plugins.lspsaga")
+  -- telescope
+  require("vitesse.plugins.telescope")
+  -- neogit
+  require("vitesse.plugins.neogit")
+  -- Primeagen/harpoon
+  require("vitesse.plugins.harpoon")
+  -- nvim-tree/nvim-tree.lua
+  require("vitesse.plugins.nvim-tree")
+  -- phaazon/hop.nvim
+  require("vitesse.plugins.hop")
+  -- j-hui/fidget
+  require("vitesse.plugins.fidget")
+  -- folke/which-key.nvim
+  require("vitesse.plugins.which-key")
+  -- folke/noice.nvim
+  require("vitesse.plugins.noice")(opts)
+  -- neo-tree
+  require("vitesse.plugins.neo-tree")(opts)
+  -- alpha
+  require("vitesse.plugins.alpha")(opts)
+  -- echasnovski/mini.indentscope
+  require("vitesse.plugins.mini-indentscope")(opts)
 
   function M.translate(group)
     if fn.has("nvim-0.6.0") == 0 then
