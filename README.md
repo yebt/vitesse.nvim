@@ -11,9 +11,7 @@
   </sub>
 </p>
 
-## More screenshots
-
-<details><summary>👉 Toggle here 👈</summary>
+<details><summary>More screenshots</summary>
 
 ![](https://cdn.jsdelivr.net/gh/2nthony/statics@main/uPic/mTzAiuZkQmGR.png)
 ![](https://cdn.jsdelivr.net/gh/2nthony/statics@main/uPic/BquUsEgy1vzV.png)
