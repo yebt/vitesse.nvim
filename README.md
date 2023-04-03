@@ -43,9 +43,11 @@ Lazy.nvim:
 
 ```lua
 require("lazy").setup {
-  "2nthony/vitesse.nvim",
-  dependencies = {
-    "tjdevries/colorbuddy.nvim"
+  {
+    "2nthony/vitesse.nvim",
+    dependencies = {
+      "tjdevries/colorbuddy.nvim"
+    },
   }
 }
 ```
@@ -116,6 +118,7 @@ require("bufferline").setup {
 
 ## Plugin support
 
+- bufferline
 - lualine
 - nvim-cmp
 - lspsaga
