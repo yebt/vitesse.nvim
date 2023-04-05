@@ -10,6 +10,7 @@ local defaults = {
   transparent_float_background = true,
   reverse_visual = false,
   dim_nc = false,
+  cmp_cmdline_disable_search_highlight_group = false,
 }
 
 local M = {
@@ -380,7 +381,7 @@ function M.setup(opts)
   -- gitsigns
   require("vitesse.plugins.gitsigns")
   -- cmp
-  require("vitesse.plugins.cmp")
+  require("vitesse.plugins.cmp")(opts)
   -- lspsaga
   require("vitesse.plugins.lspsaga")
   -- telescope
