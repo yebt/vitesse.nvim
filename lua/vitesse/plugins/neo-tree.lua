@@ -16,11 +16,12 @@ return function(_)
   Group.new("NeoTreeDirectoryIcon", groups.Folder)
   Group.new("NeoTreeDirectoryName", groups.NeoTreeFileName)
   Group.new("NeoTreeDirectoryNameNC", groups.NeoTreeFileNameNC)
+  Group.new("NeoTreeDotfile", colors.comment)
 
   Group.new("NeoTreeGitAdded", colors.green)
   Group.new("NeoTreeGitConflict", colors.orange)
   Group.new("NeoTreeGitDeleted", colors.red)
-  Group.new("NeoTreeGitIgnored", colors.ignored)
+  Group.new("NeoTreeGitIgnored", colors.comment)
   Group.new("NeoTreeGitModified", colors.blue)
   Group.new("NeoTreeGitUntracked", colors.cyan)
 end
