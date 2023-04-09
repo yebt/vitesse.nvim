@@ -12,4 +12,5 @@ return function(opts)
   Group.new("NoiceFormatProgressTodo", colors.activeForeground)
   Group.new("NoicePopup", groups.Info)
   Group.new("NoiceMini", colors.baseForeground, opts.transparent_background and colors.none or colors.lowBackground)
+  Group.new("NoiceVirtualText", groups.Comment)
 end
