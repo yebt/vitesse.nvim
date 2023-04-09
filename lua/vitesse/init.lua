@@ -282,6 +282,8 @@ function M.setup(opts)
 
   -- treesitter, important
   require("vitesse.plugins.treesitter")(opts)
+  -- lsp
+  require("vitesse.plugins.lsp")(opts)
   -- neomake
   require("vitesse.plugins.neomake")
   -- gitgutter
