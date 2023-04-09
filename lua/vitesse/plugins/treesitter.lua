@@ -3,6 +3,7 @@ return function(_)
   local colors = require("colorbuddy.init").colors
   local groups = require("colorbuddy.init").groups
   local styles = require("colorbuddy.init").styles
+  local link = require("vitesse.utils").highlight_link
 
   Group.new("@tag", colors.green)
   Group.new("@tag.attribute", colors.property)
@@ -41,19 +42,19 @@ return function(_)
   Group.link("@method.call", groups.Function)
 
   Group.link("@constructor", groups.Function)
-  -- not sure about this one, special is true and kinda nice?
-  Group.link("@parameter", groups.Variable)
+
+  link("@parameter", "@variable")
 
   Group.link("@keyword", groups.Keyword)
   Group.link("@keyword.function", groups.Operator)
   Group.link("@keyword.operator", groups.Operator)
-  Group.link("@keyword.return", groups.Keyword)
+  Group.link("@keyword.coroutine", groups.Operator)
 
   Group.link("@conditional", groups.Conditional)
   Group.link("@repeat", groups.Repeat)
   Group.link("@debug", groups.Debug)
   Group.link("@label", groups.Label)
-  Group.link("@include", groups.Include)
+  link("@include", "@keyword")
   Group.link("@exception", groups.Exception)
 
   Group.link("@type", groups.Type)
@@ -63,7 +64,7 @@ return function(_)
 
   Group.link("@storageclass", groups.Keyword)
   Group.link("@attribute", groups.Function)
-  Group.link("@field", groups.Identifier)
+  link("@field", "@property")
   Group.link("@property", groups.Property)
 
   Group.new("@variable", colors.variable)
@@ -88,7 +89,6 @@ return function(_)
   Group.link("@text.environment", groups.Macro)
   Group.link("@text.environment.name", groups.Type)
   Group.link("@text.reference", groups.String)
-
   Group.link("@text.todo", groups.Todo)
   Group.link("@text.note", groups.Comment)
   Group.link("@text.warning", groups.Warn)
