@@ -3,7 +3,6 @@ return function(_)
   local colors = require("colorbuddy.init").colors
   local groups = require("colorbuddy.init").groups
   local styles = require("colorbuddy.init").styles
-  local link = require("vitesse.utils").highlight_link
 
   Group.new("@tag", colors.green)
   Group.new("@tag.attribute", colors.property)
