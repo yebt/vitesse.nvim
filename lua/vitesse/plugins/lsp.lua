@@ -32,4 +32,5 @@ return function(_)
   link("@lsp.type.macro", "@constant")
   link("@lsp.type.parameter", "@parameter")
   link("@lsp.type.variable", "@variable")
+  link("@lsp.type.namespace", "@namespace")
 end
