@@ -256,24 +256,6 @@ function M.setup(opts)
   Group.link("diffAdded", groups.Statement)
   Group.link("diffLine", groups.Identifier)
 
-  Group.new("DiagnosticError", groups.Error)
-  Group.new("DiagnosticWarn", colors.yellow)
-  Group.new("DiagnosticInfo", colors.cyan)
-  Group.new("DiagnosticHint", colors.green)
-  Group.new("DiagnosticUnderlineError", colors.none, colors.none, styles.underline)
-  Group.new("DiagnosticUnderlineWarn", colors.none, colors.none, styles.underline)
-  Group.new("DiagnosticUnderlineInfo", colors.none, colors.none, styles.underline)
-  Group.new("DiagnosticUnderlineHint", colors.none, colors.none, styles.underline)
-  Group.link("DiagnosticVirtualTextHint", groups.Comment)
-  Group.link("DiagnosticTextWarn", groups.Warn)
-
-  Group.new("LspReferenceRead", colors.none, colors.none, styles.underline)
-  Group.link("LspReferenceText", groups.LspReferenceRead)
-  Group.new("LspReferenceWrite", colors.none, colors.none, styles.underline)
-  Group.new("LspFloatWinBorder", colors.primary)
-  Group.new("LspLinesDiagBorder", colors.primary)
-  Group.new("LspCodeLens", groups.Comment) -- lsp hint text, cmp
-
   -- alias ui
   Group.new("Folder", colors.orange)
   Group.new("FolderRoot", colors.blue)
