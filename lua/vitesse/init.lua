@@ -162,7 +162,7 @@ function M.setup(opts)
   Group.link("TermCursor", groups.Cursor)
   Group.new("TermCursorNC", colors.black3, colors.activeBackground)
 
-  Group.new("Identifier", colors.class)
+  Group.link("Identifier", groups.Property)
 
   -- any statement, conditional, repeat (for, do while), label, operator
   Group.new("Statement", colors.green)

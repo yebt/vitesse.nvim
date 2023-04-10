@@ -4,7 +4,6 @@ return function(_)
   -- lsp semantic tokens
   link("@lsp.type.comment", "@comment")
   link("@lsp.type.enum", "@type")
-  link("@lsp.type.property", "@property")
   link("@lsp.type.macro", "@constant")
   link("@lsp.type.parameter", "@parameter")
   link("@lsp.type.variable", "@variable")
