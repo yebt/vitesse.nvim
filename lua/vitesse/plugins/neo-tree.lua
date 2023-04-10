@@ -4,7 +4,7 @@ return function(_)
   local groups = require("colorbuddy.init").groups
 
   Group.new("NeoTreeFloatBorder", groups.FloatBorder)
-  Group.new("NeoTreeTitleBar", colors.baseForeground, colors.none)
+  Group.new("NeoTreeTitleBar", colors.baseBackground, colors.lowBorder)
 
   Group.new("NeoTreeNormal", groups.Normal)
   Group.new("NeoTreeNormalNC", groups.NormalNC)
