@@ -24,6 +24,7 @@ return function(_)
   Group.new("LspFloatWinBorder", colors.primary)
   Group.new("LspLinesDiagBorder", colors.primary)
   Group.new("LspCodeLens", groups.Comment) -- lsp hint text, cmp
+  Group.new("LspInfoBorder", groups.FloatBorder)
 
   -- lsp semantic tokens
   link("@lsp.type.comment", "@comment")
