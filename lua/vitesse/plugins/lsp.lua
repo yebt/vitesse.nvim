@@ -34,4 +34,5 @@ return function(_)
   link("@lsp.type.variable", "@variable")
   link("@lsp.type.namespace", "@namespace")
   link("@lsp.type.property", "@property")
+  link("@lsp.type.type", "@type")
 end
