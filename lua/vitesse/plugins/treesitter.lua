@@ -61,6 +61,7 @@ return function(_)
   Group.link("@type.builtin", groups.Type)
   Group.link("@type.qualifier", groups.Builtin)
   Group.link("@type.definition", groups.Type)
+  link("@type.javascript", "@variable")
 
   Group.link("@storageclass", groups.Keyword)
   Group.link("@attribute", groups.Function)
