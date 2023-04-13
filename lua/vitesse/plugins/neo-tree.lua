@@ -19,7 +19,7 @@ return function(_)
   Group.new("NeoTreeDotfile", colors.comment)
 
   Group.link("NeoTreeGitAdded", groups.DiffAdd)
-  Group.new("NeoTreeGitConflict", colors.orange)
+  Group.new("NeoTreeGitConflict", groups.Warn)
   Group.link("NeoTreeGitDeleted", groups.DiffDelete)
   Group.new("NeoTreeGitIgnored", groups.Ignore)
   Group.link("NeoTreeGitModified", groups.DiffChange)
