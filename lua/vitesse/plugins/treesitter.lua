@@ -93,5 +93,5 @@ return function(_)
   Group.link("@text.todo", groups.Todo)
   Group.new("@text.note", colors.cyan)
   Group.link("@text.warning", groups.Warn)
-  Group.new("@text.danger", colors.red, colors.none, styles.bold)
+  Group.new("@text.danger", groups.Error)
 end
