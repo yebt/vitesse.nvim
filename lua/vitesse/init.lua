@@ -255,6 +255,11 @@ function M.setup(opts)
 
   Group.link("diffAdded", groups.Statement)
   Group.link("diffLine", groups.Identifier)
+  -- diff
+  Group.new("DiffAdd", colors.green, colors.none, styles.bold, colors.green)
+  Group.new("DiffChange", colors.yellow, colors.none, styles.bold, colors.yellow)
+  Group.new("DiffDelete", colors.red, colors.none, styles.bold)
+  Group.new("DiffText", colors.blue, colors.none, styles.bold, colors.blue)
 
   -- alias ui
   Group.new("Folder", colors.orange)
@@ -270,8 +275,6 @@ function M.setup(opts)
   require("vitesse.plugins.neomake")
   -- gitgutter
   require("vitesse.plugins.gitgutter")
-  -- sindrets/diffview.nvim
-  require("vitesse.plugins.diffview")
   -- gitsigns
   require("vitesse.plugins.gitsigns")
   -- cmp
