@@ -91,7 +91,7 @@ return function(_)
   Group.link("@text.environment.name", groups.Type)
   Group.link("@text.reference", groups.String)
   Group.link("@text.todo", groups.Todo)
-  Group.link("@text.note", groups.Comment)
+  Group.new("@text.note", colors.cyan)
   Group.link("@text.warning", groups.Warn)
   Group.new("@text.danger", colors.red, colors.none, styles.bold)
 end
