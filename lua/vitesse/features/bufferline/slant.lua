@@ -10,6 +10,7 @@ local inactive = {
 }
 
 return {
+  ---@deprecated will remove this later
   separator_style = "padded_slant",
   highlights = {
     -- whole bar background
