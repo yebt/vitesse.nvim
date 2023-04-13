@@ -255,8 +255,8 @@ function M.setup(opts)
 
   -- diff
   Group.new("DiffAdd", colors.green, colors.none, styles.bold, colors.green)
-  Group.new("DiffChange", colors.yellow, colors.none, styles.bold, colors.yellow)
-  Group.new("DiffDelete", colors.red, colors.none, styles.bold)
+  Group.new("DiffChange", colors.orange, colors.none, styles.bold, colors.orange)
+  Group.new("DiffDelete", colors.red, colors.none, styles.bold, colors.red)
   Group.new("DiffText", colors.blue, colors.none, styles.bold, colors.blue)
 
   -- alias ui
