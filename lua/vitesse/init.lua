@@ -253,8 +253,6 @@ function M.setup(opts)
   Group.new("vimHiLink", colors.blue)
   Group.new("vimGroup", colors.blue, colors.NONE, styles.underline + styles.bold)
 
-  Group.link("diffAdded", groups.Statement)
-  Group.link("diffLine", groups.Identifier)
   -- diff
   Group.new("DiffAdd", colors.green, colors.none, styles.bold, colors.green)
   Group.new("DiffChange", colors.yellow, colors.none, styles.bold, colors.yellow)
