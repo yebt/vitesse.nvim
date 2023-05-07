@@ -10,6 +10,8 @@ return function(_)
   Group.new("DiagnosticWarn", colors.yellow)
   Group.new("DiagnosticInfo", colors.cyan)
   Group.new("DiagnosticHint", colors.green)
+  -- FIXME: `styles.strikethrough` not working
+  Group.new("DiagnosticDeprecated", groups.Comment, colors.none, styles.italic + styles.underline)
   Group.new("DiagnosticUnderlineError", colors.none, colors.none, styles.underline)
   Group.new("DiagnosticUnderlineWarn", colors.none, colors.none, styles.underline)
   Group.new("DiagnosticUnderlineInfo", colors.none, colors.none, styles.underline)
