@@ -94,4 +94,9 @@ return function(_)
   Group.new("@text.note", colors.cyan)
   Group.link("@text.warning", groups.Warn)
   Group.new("@text.danger", groups.Error)
+
+  -- filetypes
+
+  -- tsx
+  Group.new("@constructor.tsx", colors.property)
 end
