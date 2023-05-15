@@ -301,6 +301,8 @@ function M.setup(opts)
   require("vitesse.plugins.alpha")(opts)
   -- echasnovski/mini.indentscope
   require("vitesse.plugins.mini-indentscope")(opts)
+  -- vim-illuminate
+  require("vitesse.plugins.illuminate")(opts)
 
   function M.translate(group)
     if fn.has("nvim-0.6.0") == 0 then

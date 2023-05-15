@@ -130,6 +130,7 @@ require("bufferline").setup {
 - mini.indentscope
 - nvim-tree
 - folke/whichkey.nvim
+- vim-illuminate
 
 ## Thanks
 
