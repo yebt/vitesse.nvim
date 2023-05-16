@@ -11,6 +11,7 @@ local defaults = {
   reverse_visual = false,
   dim_nc = false,
   cmp_cmdline_disable_search_highlight_group = false,
+  telescope_border_follow_float_background = false,
 }
 
 local M = {
@@ -127,27 +128,29 @@ function M.setup(opts)
   Group.new("Info", colors.blue)
   Group.new("Hint", colors.cyan)
 
-  local normal_fg = colors.baseForeground
-  local normal_bg = colors.baseBackground
-  local normal_nc_fg = normal_fg
-  local normal_float_bg = colors.baseBackground:light()
+  local normal = {
+    fg = colors.baseForeground,
+    bg = colors.baseBackground,
+    nc_fg = colors.baseForeground,
+    float_bg = colors.baseBackground:light(),
+  }
 
   if opts.transparent_background then
-    normal_bg = colors.none
+    normal.bg = colors.none
   end
   if opts.transparent_float_background then
-    normal_float_bg = colors.none
+    normal.float_bg = colors.none
   end
   if opts.dim_nc then
-    normal_nc_fg = colors.secondaryForeground
+    normal.nc_fg = colors.secondaryForeground
   end
-  Group.new("Normal", normal_fg, normal_bg)
+  Group.new("Normal", normal.fg, normal.bg)
   -- normal non-current text, means non-focus window text
-  Group.new("NormalNC", normal_nc_fg, normal_bg)
+  Group.new("NormalNC", normal.nc_fg, normal.bg)
 
   -- pum (popup menu) float
-  Group.new("Pmenu", groups.Normal, normal_float_bg) -- popup menu normal item
-  Group.new("PmenuSel", colors.activeBackground, normal_fg, styles.reverse) -- selected item
+  Group.new("Pmenu", groups.Normal, normal.float_bg) -- popup menu normal item
+  Group.new("PmenuSel", colors.activeBackground, normal.fg, styles.reverse) -- selected item
   Group.new("PmenuSbar", colors.black1, colors.none, styles.reverse)
   Group.new("PmenuThumb", colors.black2, colors.none, styles.reverse)
 
@@ -280,7 +283,7 @@ function M.setup(opts)
   -- lspsaga
   require("vitesse.plugins.lspsaga")
   -- telescope
-  require("vitesse.plugins.telescope")
+  require("vitesse.plugins.telescope")(opts, { normal = normal })
   -- neogit
   require("vitesse.plugins.neogit")
   -- Primeagen/harpoon

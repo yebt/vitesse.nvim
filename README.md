@@ -81,6 +81,8 @@ require("vitesse").setup {
   reverse_visual = false,
   dim_nc = false,
   cmp_cmdline_disable_search_highlight_group = false, -- disable search highlight group for cmp item
+  -- if `transparent_float_background` false, make telescope border color same as float background
+  telescope_border_follow_float_background = false,
 }
 ```
 
