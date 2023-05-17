@@ -297,7 +297,7 @@ function M.setup(opts)
   -- folke/which-key.nvim
   require("vitesse.plugins.which-key")
   -- folke/noice.nvim
-  require("vitesse.plugins.noice")(opts)
+  require("vitesse.plugins.noice")(opts, { normal = normal })
   -- neo-tree
   require("vitesse.plugins.neo-tree")(opts)
   -- alpha
