@@ -16,7 +16,7 @@ return function(opts, value)
   if not opts.transparent_float_background then
     link("TelescopeNormal", "NormalFloat")
     Group.new("TelescopeBorder", colors.none, colors.none)
-    Group.new("TelescopeSelection", colors.none, normal.float_bg:dark())
+    Group.new("TelescopeSelection", colors.none, colors.activeBackground)
     if opts.telescope_border_follow_float_background then
       Group.new("TelescopeBorder", normal.float_bg, normal.float_bg)
     end
