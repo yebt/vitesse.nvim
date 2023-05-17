@@ -11,7 +11,7 @@ return function(opts, value)
   Group.new("NoiceLspProgressSpinner", colors.primary)
   Group.new("NoiceLspProgressClient", colors.primary)
   Group.new("NoiceFormatProgressTodo", colors.activeForeground)
-  Group.new("NoiceMini", colors.baseForeground, opts.transparent_background and colors.none or colors.lowBackground)
+  Group.new("NoiceMini", colors.baseForeground)
   Group.new("NoiceVirtualText", groups.Search)
 
   if not opts.transparent_float_background then
