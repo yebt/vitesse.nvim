@@ -109,7 +109,7 @@ local slant = require("vitesse.features.bufferline.slant")
 
 require("bufferline").setup {
   options = {
-    separator_style = slant.separator_style,
+    separator_style = "slant",
   },
   highlights = slant.highlights,
 }
