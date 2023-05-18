@@ -4,6 +4,8 @@ local vitesse_themes = require("vitesse.colors").themes
 local cmd = vim.cmd
 local fn = vim.fn
 
+-- merged opts, defaults <- user_opts
+local opts = {}
 local defaults = {
   comment_italics = true,
   transparent_background = true,
@@ -22,17 +24,12 @@ local M = {
   styles = require("colorbuddy.init").styles,
 }
 
-function M.setup(opts)
-  if not opts then
-    opts = {}
-  end
+function M.setup(user_opts)
+  user_opts = user_opts or {}
+  opts = vim.tbl_extend("force", defaults, user_opts)
+end
 
-  for k, v in pairs(defaults) do
-    if opts[k] == nil then
-      opts[k] = v
-    end
-  end
-
+function M.load()
   -- only needed to clear when not the default colorscheme
   if vim.g.colors_name then
     vim.cmd("hi clear")

@@ -37,6 +37,10 @@
 
 ## Usage
 
+```vim
+colorscheme vitesse
+```
+
 Lazy.nvim:
 
 ```lua
