@@ -218,11 +218,6 @@ function M.load()
   Group.new("SpellCap", colors.none, colors.none, styles.undercurl, colors.purple6)
   Group.new("SpellRare", colors.none, colors.none, styles.undercurl, colors.cyan)
   Group.new("SpellLocal", colors.none, colors.none, styles.undercurl, colors.yellow)
-  -- These are nice alternatives if you like a little more color
-  --Group.new("SpellBad", colors.purple6, colors.bg, styles.undercurl)
-  --Group.new("SpellCap", colors.purple6, colors.bg, styles.undercurl)
-  --Group.new("SpellLocal", colors.yellow, colors.bg, styles.undercurl)
-  --Group.new("SpellRare", colors.cyan, colors.bg, styles.undercurl)
 
   Group.new("TabLine", colors.secondaryForeground, colors.black1, styles.NONE, colors.secondaryForeground)
   Group.new("TabLineFill", colors.secondaryForeground, colors.black1)
