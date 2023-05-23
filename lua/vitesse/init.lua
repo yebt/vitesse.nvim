@@ -219,11 +219,6 @@ function M.load()
   Group.new("SpellRare", colors.none, colors.none, styles.undercurl, colors.cyan)
   Group.new("SpellLocal", colors.none, colors.none, styles.undercurl, colors.yellow)
 
-  Group.new("TabLine", colors.secondaryForeground, colors.black1, styles.NONE, colors.secondaryForeground)
-  Group.new("TabLineFill", colors.secondaryForeground, colors.black1)
-  Group.new("TabLineSel", colors.yellow, colors.bg)
-  Group.new("TabLineSeparatorSel", colors.cyan, colors.none)
-
   Group.new("MatchParen", colors.red, colors.activeBackground, styles.bold)
 
   -- vim highlighting
@@ -298,6 +293,8 @@ function M.load()
   require("vitesse.plugins.mini-indentscope")(opts)
   -- vim-illuminate
   require("vitesse.plugins.illuminate")(opts)
+  -- seblj/nvim-tabline
+  require("vitesse.plugins.tabline")(opts, { normal = normal })
 
   function M.translate(group)
     if fn.has("nvim-0.6.0") == 0 then
