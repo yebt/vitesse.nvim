@@ -281,7 +281,7 @@ function M.load()
   require("vitesse.plugins.hop")
   -- j-hui/fidget
   require("vitesse.plugins.fidget")
-
+  -- lukas-reineke/indent-blankline.nvim
   require("vitesse.plugins.indent-blankline")
   -- folke/which-key.nvim
   require("vitesse.plugins.which-key")

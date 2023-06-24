@@ -137,6 +137,7 @@ require("bufferline").setup {
 - nvim-tree
 - folke/whichkey.nvim
 - vim-illuminate
+- indent-blankline.nvim
 
 ## Thanks
 
