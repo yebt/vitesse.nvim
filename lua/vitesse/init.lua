@@ -299,40 +299,6 @@ function M.load()
   -- seblj/nvim-tabline
   require("vitesse.plugins.tabline")(opts, { normal = normal })
 
-  function M.translate(group)
-    if fn.has("nvim-0.6.0") == 0 then
-      return group
-    end
-
-    if not string.match(group, "^LspDiagnostics") then
-      return group
-    end
-
-    local translated = group
-    translated = string.gsub(translated, "^LspDiagnosticsDefault", "Diagnostic")
-    translated = string.gsub(translated, "^LspDiagnostics", "Diagnostic")
-    translated = string.gsub(translated, "Warning$", "Warn")
-    translated = string.gsub(translated, "Information$", "Info")
-    return translated
-  end
-
-  local lspColors = {
-    Error = groups.Error,
-    Warn = groups.Warn,
-    Warning = groups.Warn,
-    Information = groups.Info,
-    Hint = groups.Hint,
-  }
-  for _, lsp in pairs({ "Error", "Warning", "Information", "Hint" }) do
-    local lspGroup = Group.new(M.translate("LspDiagnosticsDefault" .. lsp), lspColors[lsp])
-    Group.link(M.translate("LspDiagnosticsVirtualText" .. lsp), lspGroup)
-    Group.new(M.translate("LspDiagnosticsUnderline" .. lsp), colors.none, colors.none, styles.undercurl, lspColors[lsp])
-  end
-
-  for _, name in pairs({ "LspReferenceText", "LspReferenceRead", "LspReferenceWrite" }) do
-    Group.link(M.translate(name), groups.CursorLine)
-  end
-
   return M
 end
 
