@@ -1,4 +1,6 @@
-return function(_)
+return function(opts)
+  local diagnostic_virtual_text_background = opts.diagnostic_virtual_text_background
+
   local Group = require("colorbuddy.init").Group
   local colors = require("colorbuddy.init").colors
   local groups = require("colorbuddy.init").groups
@@ -10,13 +12,28 @@ return function(_)
   Group.new("DiagnosticWarn", colors.yellow)
   Group.new("DiagnosticInfo", colors.cyan)
   Group.new("DiagnosticHint", colors.green)
-  -- FIXME: `styles.strikethrough` not working
+  -- NOTE: `styles.strikethrough` not working
   Group.new("DiagnosticDeprecated", groups.Comment, colors.none, styles.italic + styles.underline)
   Group.new("DiagnosticUnderlineError", colors.none, colors.none, styles.underline)
   Group.new("DiagnosticUnderlineWarn", colors.none, colors.none, styles.underline)
   Group.new("DiagnosticUnderlineInfo", colors.none, colors.none, styles.underline)
   Group.new("DiagnosticUnderlineHint", colors.none, colors.none, styles.underline)
-  Group.link("DiagnosticVirtualTextHint", groups.Comment)
+
+  Group.link("DiagnosticVirtualTextError", groups.DiagnosticError)
+  Group.link("DiagnosticVirtualTextWarn", groups.DiagnosticWarn)
+  Group.link("DiagnosticVirtualTextInfo", groups.DiagnosticInfo)
+  Group.link("DiagnosticVirtualTextHint", groups.DiagnosticHint)
+  if diagnostic_virtual_text_background then
+    Group.new("DiagnosticVirtualTextError", groups.DiagnosticVirtualTextError, colors.red:dark():dark():dark():dark())
+    Group.new(
+      "DiagnosticVirtualTextWarn",
+      groups.DiagnosticVirtualTextWarn,
+      colors.yellow:dark():dark():dark():dark():dark()
+    )
+    Group.new("DiagnosticVirtualTextInfo", groups.DiagnosticVirtualTextInfo, colors.cyan:dark():dark():dark():dark())
+    Group.new("DiagnosticVirtualTextHint", groups.DiagnosticVirtualTextHint, colors.green:dark():dark():dark())
+  end
+
   Group.link("DiagnosticTextWarn", groups.Warn)
 
   -- lsp

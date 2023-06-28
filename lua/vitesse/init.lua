@@ -14,6 +14,7 @@ local defaults = {
   dim_nc = false,
   cmp_cmdline_disable_search_highlight_group = false,
   telescope_border_follow_float_background = false,
+  diagnostic_virtual_text_background = false,
 }
 
 local M = {
