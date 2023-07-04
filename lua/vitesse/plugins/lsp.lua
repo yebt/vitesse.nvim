@@ -8,10 +8,10 @@ return function(opts)
   local link = require("vitesse.utils").highlight_link
 
   -- diagnostics
-  Group.new("DiagnosticError", groups.Error)
-  Group.new("DiagnosticWarn", colors.yellow)
-  Group.new("DiagnosticInfo", colors.cyan)
-  Group.new("DiagnosticHint", colors.green)
+  Group.new("DiagnosticError", colors.Error)
+  Group.new("DiagnosticWarn", colors.Warn)
+  Group.new("DiagnosticInfo", colors.Info)
+  Group.new("DiagnosticHint", colors.Hint)
   -- NOTE: `styles.strikethrough` not working
   Group.new("DiagnosticDeprecated", groups.Comment, colors.none, styles.italic + styles.underline)
   Group.new("DiagnosticUnderlineError", colors.none, colors.none, styles.underline)
@@ -24,14 +24,14 @@ return function(opts)
   Group.link("DiagnosticVirtualTextInfo", groups.DiagnosticInfo)
   Group.link("DiagnosticVirtualTextHint", groups.DiagnosticHint)
   if diagnostic_virtual_text_background then
-    Group.new("DiagnosticVirtualTextError", groups.DiagnosticVirtualTextError, colors.red:dark():dark():dark():dark())
+    Group.new("DiagnosticVirtualTextError", groups.DiagnosticVirtualTextError, colors.Error:dark():dark():dark():dark())
     Group.new(
       "DiagnosticVirtualTextWarn",
       groups.DiagnosticVirtualTextWarn,
-      colors.yellow:dark():dark():dark():dark():dark()
+      colors.Warn:dark():dark():dark():dark():dark()
     )
-    Group.new("DiagnosticVirtualTextInfo", groups.DiagnosticVirtualTextInfo, colors.cyan:dark():dark():dark():dark())
-    Group.new("DiagnosticVirtualTextHint", groups.DiagnosticVirtualTextHint, colors.green:dark():dark():dark())
+    Group.new("DiagnosticVirtualTextInfo", groups.DiagnosticVirtualTextInfo, colors.Info:dark():dark():dark():dark())
+    Group.new("DiagnosticVirtualTextHint", groups.DiagnosticVirtualTextHint, colors.Hint:dark():dark():dark())
   end
 
   Group.link("DiagnosticTextWarn", groups.Warn)

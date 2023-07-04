@@ -121,10 +121,15 @@ function M.load()
   Color.new("yellow", vitesse_themes.yellow)
   Color.new("magenta", vitesse_themes.magenta)
 
-  Group.new("Error", colors.red)
-  Group.new("Warn", colors.yellow)
-  Group.new("Info", colors.blue)
-  Group.new("Hint", colors.cyan)
+  Color.new("Error", vitesse_themes.red)
+  Color.new("Warn", vitesse_themes.yellow)
+  Color.new("Info", vitesse_themes.blue)
+  Color.new("Hint", vitesse_themes.cyan)
+
+  Group.new("Error", colors.Error)
+  Group.new("Warn", colors.Warn)
+  Group.new("Info", colors.Info)
+  Group.new("Hint", colors.Hint)
 
   local normal = {
     fg = colors.baseForeground,
