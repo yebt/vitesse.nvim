@@ -80,7 +80,7 @@ Setup with defaults:
 ```lua
 require("vitesse").setup {
   comment_italics = true,
-  transparnet_background = true,
+  transparent_background = true,
   transparent_float_background = true, -- aka pum(popup menu) background
   reverse_visual = false,
   dim_nc = false,
