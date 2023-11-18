@@ -278,7 +278,7 @@ function M.load()
   -- telescope
   require("vitesse.plugins.telescope")(opts, { normal = normal })
   -- neogit
-  require("vitesse.plugins.neogit")
+  require("vitesse.plugins.neogit")(opts)
   -- Primeagen/harpoon
   require("vitesse.plugins.harpoon")
   -- nvim-tree/nvim-tree.lua
