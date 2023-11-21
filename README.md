@@ -90,7 +90,7 @@ require("vitesse").setup {
   -- diagnostic virtual text background, like error lens
   diagnostic_virtual_text_background = false,
 
-  -- override the [palette.lua](./lua/vitesse/palette.lua), go to file see fields
+  -- override the `lua/vitesse/palette.lua`, go to file see fields
   colors = {},
   themes = {},
 }
