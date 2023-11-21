@@ -89,6 +89,10 @@ require("vitesse").setup {
   telescope_border_follow_float_background = false,
   -- diagnostic virtual text background, like error lens
   diagnostic_virtual_text_background = false,
+
+  -- override the [./lua/vitesse/palette.lua], go to file see fields
+  colors = {},
+  themes = {},
 }
 ```
 

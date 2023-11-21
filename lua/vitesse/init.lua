@@ -15,6 +15,8 @@ local defaults = {
   cmp_cmdline_disable_search_highlight_group = false,
   telescope_border_follow_float_background = false,
   diagnostic_virtual_text_background = false,
+  colors = {}, -- override `vitesse_colors`
+  themes = {}, -- override `vitesse_themes`
 }
 
 local M = {
@@ -28,6 +30,8 @@ local M = {
 function M.setup(user_opts)
   user_opts = user_opts or {}
   opts = vim.tbl_extend("force", defaults, user_opts)
+  vitesse_colors = vim.tbl_extend("force", vitesse_colors, opts.colors)
+  vitesse_themes = vim.tbl_extend("force", vitesse_themes, opts.themes)
 end
 
 function M.load()
