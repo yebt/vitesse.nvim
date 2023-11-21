@@ -48,7 +48,7 @@ function M.load()
   local groups = M.groups
   local styles = M.styles
 
-  Color.new("bg", vitesse_colors.background)
+  Color.new("bg", vitesse_themes.background)
 
   Color.new("black", vitesse_colors.black)
   Color.new("black1", vitesse_colors.black1)
