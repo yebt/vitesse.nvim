@@ -1,5 +1,5 @@
-local vitesse_colors = require("vitesse.colors").colors
-local vitesse_themes = require("vitesse.colors").themes
+local vitesse_colors = require("vitesse.palette").colors
+local vitesse_themes = require("vitesse.palette").themes
 
 local cmd = vim.cmd
 local fn = vim.fn
