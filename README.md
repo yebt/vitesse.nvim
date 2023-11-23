@@ -75,6 +75,16 @@ require("lualine").setup {
 }
 ```
 
+Bufferline:
+
+```lua
+require("bufferline").setup {
+  options = {
+    highlights = require("vitesse.plugins.bufferline"),
+  },
+}
+```
+
 Setup with defaults:
 
 ```lua
@@ -105,7 +115,7 @@ vim.opt.pumblend = 0
 
 ## Extra features
 
-<details><summary>⛰️ Slant tab</summary>
+<details><summary>⛰️ Slant tab (DEPRECATED, see usage bufferline)</summary>
 
 ![](https://cdn.jsdelivr.net/gh/2nthony/statics@main/uPic/sUrBU2Hu7h7U.png)
 
