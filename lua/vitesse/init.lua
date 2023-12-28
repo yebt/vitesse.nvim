@@ -14,6 +14,7 @@ local defaults = {
   dim_nc = false,
   cmp_cmdline_disable_search_highlight_group = false,
   telescope_border_follow_float_background = false,
+  lspsaga_border_follow_float_background = false,
   diagnostic_virtual_text_background = false,
   colors = {}, -- override `vitesse_colors`
   themes = {}, -- override `vitesse_themes`
@@ -278,7 +279,7 @@ function M.load()
   -- cmp
   require("vitesse.plugins.cmp")(opts)
   -- lspsaga
-  require("vitesse.plugins.lspsaga")
+  require("vitesse.plugins.lspsaga")(opts, { normal = normal })
   -- telescope
   require("vitesse.plugins.telescope")(opts, { normal = normal })
   -- neogit
