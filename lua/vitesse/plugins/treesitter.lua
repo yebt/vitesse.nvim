@@ -99,4 +99,9 @@ return function(_)
 
   -- tsx
   Group.new("@constructor.tsx", colors.property)
+
+  -- ecosystems
+
+  -- treesitter-context
+  Group.link("TreesitterContext", groups.CursorLine)
 end

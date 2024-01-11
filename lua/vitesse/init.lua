@@ -1,5 +1,5 @@
-local vitesse_colors = require("vitesse.colors").colors
-local vitesse_themes = require("vitesse.colors").themes
+local vitesse_colors = require("vitesse.palette").colors
+local vitesse_themes = require("vitesse.palette").themes
 
 local cmd = vim.cmd
 local fn = vim.fn
@@ -14,7 +14,10 @@ local defaults = {
   dim_nc = false,
   cmp_cmdline_disable_search_highlight_group = false,
   telescope_border_follow_float_background = false,
+  lspsaga_border_follow_float_background = false,
   diagnostic_virtual_text_background = false,
+  colors = {}, -- override `vitesse_colors`
+  themes = {}, -- override `vitesse_themes`
 }
 
 local M = {
@@ -28,6 +31,8 @@ local M = {
 function M.setup(user_opts)
   user_opts = user_opts or {}
   opts = vim.tbl_extend("force", defaults, user_opts)
+  vitesse_colors = vim.tbl_extend("force", vitesse_colors, opts.colors)
+  vitesse_themes = vim.tbl_extend("force", vitesse_themes, opts.themes)
 end
 
 function M.load()
@@ -48,7 +53,7 @@ function M.load()
   local groups = M.groups
   local styles = M.styles
 
-  Color.new("bg", vitesse_colors.background)
+  Color.new("bg", vitesse_themes.background)
 
   Color.new("black", vitesse_colors.black)
   Color.new("black1", vitesse_colors.black1)
@@ -274,11 +279,11 @@ function M.load()
   -- cmp
   require("vitesse.plugins.cmp")(opts)
   -- lspsaga
-  require("vitesse.plugins.lspsaga")
+  require("vitesse.plugins.lspsaga")(opts, { normal = normal })
   -- telescope
   require("vitesse.plugins.telescope")(opts, { normal = normal })
   -- neogit
-  require("vitesse.plugins.neogit")
+  require("vitesse.plugins.neogit")(opts)
   -- Primeagen/harpoon
   require("vitesse.plugins.harpoon")
   -- nvim-tree/nvim-tree.lua

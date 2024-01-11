@@ -1,4 +1,4 @@
-local vitesse_theme = require("vitesse.colors").themes
+local vitesse_theme = require("vitesse.palette").themes
 
 local vitesse = {}
 
